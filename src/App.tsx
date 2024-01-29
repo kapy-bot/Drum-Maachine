@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import './App.css'
-import {AudioClip} from "./types";
-import Drum from './Drum';
+import { useState } from "react";
+import "./App.css";
+import { AudioClip } from "./types";
+import Drum from "./Drum";
 
 const audioClips: AudioClip[] = [
   {
@@ -67,17 +67,17 @@ function App() {
 
   return (
     <>
-     <div className="container" id="drum-machine" onKeyDown={playAudio}>
-      <h1>FCC DRUM MACHINE</h1>
-      <div className="whole-drum">
-        {audioClips.map((clip) => (
-          <Drum audioClip={clip} key={clip.keyTrigger} />
+      <div className="container" id="drum-machine" onKeyDown={playAudio}>
+        <h1>FCC DRUM MACHINE</h1>
+        <div className="whole-drum">
+          {audioClips.map((clip) => (
+            <Drum audioClip={clip} key={clip.keyTrigger} />
           ))}
+        </div>
+        <div id="display"></div>
       </div>
-      <div id="display"></div>
-     </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
